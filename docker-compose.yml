@@ -1,0 +1,17 @@
+version: "3.9"
+
+services: 
+    app:
+        build: 
+            context: .
+            args: 
+                - DEV=true
+        ports:
+            # maps port 8000 on local to port 8008 insider docker container
+            - "8000:8000"
+        volumes:
+            # with this mapping, files created inside container or projects gets
+            # mapped to each other 
+            - ./app:/app 
+        command: >
+            sh -c "python manage.py runserver 0.0.0.0:8000"
