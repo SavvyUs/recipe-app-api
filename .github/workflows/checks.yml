@@ -1,5 +1,5 @@
----
-
+--- 
+# Define non workflow_dispatch event
 name: Checks
 
 on: [push]
