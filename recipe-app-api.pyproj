@@ -1,0 +1,115 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ddb68926-0fe2-4881-acd1-dd3375b7d81b</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>recipe_app_api.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>recipe-app-api</Name>
+    <RootNamespace>recipe-app-api</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\app\asgi.py" />
+    <Compile Include="app\app\calc.py" />
+    <Compile Include="app\app\settings.py" />
+    <Compile Include="app\app\test.py" />
+    <Compile Include="app\app\urls.py" />
+    <Compile Include="app\app\wsgi.py" />
+    <Compile Include="app\app\__init__.py" />
+    <Compile Include="app\core\admin.py" />
+    <Compile Include="app\core\apps.py" />
+    <Compile Include="app\core\management\commands\wait_for_db.py" />
+    <Compile Include="app\core\management\commands\__init__.py" />
+    <Compile Include="app\core\management\__init__.py" />
+    <Compile Include="app\core\migrations\0001_initial.py" />
+    <Compile Include="app\core\migrations\__init__.py" />
+    <Compile Include="app\core\models.py" />
+    <Compile Include="app\core\tests\test_command.py" />
+    <Compile Include="app\core\tests\test_models.py" />
+    <Compile Include="app\core\tests\__init__.py" />
+    <Compile Include="app\core\__init__.py" />
+    <Compile Include="app\manage.py" />
+    <Compile Include="recipe_app_api.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.9</Version>
+      <Description>env (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".github\workflows\checks.yml" />
+    <Content Include=".gitignore" />
+    <Content Include="app\.flake8" />
+    <Content Include="app\app\__pycache__\calc.cpython-39.pyc" />
+    <Content Include="app\app\__pycache__\settings.cpython-39.pyc" />
+    <Content Include="app\app\__pycache__\test.cpython-39.pyc" />
+    <Content Include="app\app\__pycache__\urls.cpython-39.pyc" />
+    <Content Include="app\app\__pycache__\wsgi.cpython-39.pyc" />
+    <Content Include="app\app\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="app\core\management\commands\__pycache__\wait_for_db.cpython-39.pyc" />
+    <Content Include="app\core\management\commands\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="app\core\management\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="app\core\migrations\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="app\core\tests\__pycache__\test_command.cpython-39.pyc" />
+    <Content Include="app\core\tests\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="app\core\__pycache__\admin.cpython-39.pyc" />
+    <Content Include="app\core\__pycache__\apps.cpython-39.pyc" />
+    <Content Include="app\core\__pycache__\models.cpython-39.pyc" />
+    <Content Include="app\core\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="app\db.sqlite3" />
+    <Content Include="docker-compose.yml" />
+    <Content Include="Dockerfile" />
+    <Content Include="dockerignore" />
+    <Content Include="README.md" />
+    <Content Include="requirements.dev.txt" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".github\" />
+    <Folder Include=".github\workflows\" />
+    <Folder Include="app\" />
+    <Folder Include="app\app\" />
+    <Folder Include="app\app\__pycache__\" />
+    <Folder Include="app\core\" />
+    <Folder Include="app\core\management\" />
+    <Folder Include="app\core\management\commands\" />
+    <Folder Include="app\core\management\commands\__pycache__\" />
+    <Folder Include="app\core\management\__pycache__\" />
+    <Folder Include="app\core\migrations\" />
+    <Folder Include="app\core\migrations\__pycache__\" />
+    <Folder Include="app\core\tests\" />
+    <Folder Include="app\core\tests\__pycache__\" />
+    <Folder Include="app\core\__pycache__\" />
+    <Folder Include="tmp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
